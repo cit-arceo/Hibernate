@@ -13,10 +13,12 @@ import javax.persistence.Table;
  *
  * @author citla
  */
-@Entity (name="empleados")
+@Entity
+@Table(name="empleados")
 public class Empleados {    
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name="clave")
     private long clave;
     @Column (name="nombre")
@@ -35,7 +37,7 @@ public class Empleados {
         this.direccion = direccion;
         this.telefono = telefono;
     }
-
+    
     public long getClave() {
         return clave;
     }
@@ -67,4 +69,11 @@ public class Empleados {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+//    @Override
+//    public String toString() {
+//        return "Empleados{" + "clave=" + clave + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono + '}';
+//    }
+    
+    
 }
